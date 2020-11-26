@@ -1,13 +1,10 @@
 import React from 'react';
 import 'typeface-roboto';
+import {Link} from "react-router-dom"
 
-const SearchResult =() => {
+const FavoriteNotLogged =() => {
 
   document.body.style.height = "100vh";
-
-  const openFavorites = event => {
-    {/*Function to produce object inside Results div depending on if the user is logged in or not*/}
-  }
 
   return(
     <div style={{margin: "0 auto", height: "100vh"}}>
@@ -41,30 +38,24 @@ const SearchResult =() => {
           </div>
         </div>
         <br/>
-        <div className="row" style={{width: "100%"}}>
-          <div id="FilterArea">
+        <div id="FavHeader" className="row">
+            <div id="HeartImage"></div>
+            <div style={{color: "black", width: "50%", textAlign: "left", fontWeight: "bold", fontSize: "30px"}}>Favorites</div>
+        </div>
+        <br/>
+        <div id="FavBody">
+            <div id="biggerHeartImage"></div>
+            <h1>You are just a step away from your favorite recipes!</h1>
+            You need to be signed on into Seppi to view your favorites. Keep track of the recipes you love or want to view later.
             <br/>
-            Filter By<br/>
-            <div id="FilterDropDowns">
-              Filters go here
-            </div>
-          </div>
-          {/*Idea is to have contents in Results hidden and not computed till a Search is made, also hide when Favorite Button Clicked*/}
-          <div id="Results">
-            <div>
-              <div className="row" id="FiltersChosen">
-                <button>Example Object here</button>
-              </div>
-              <div id="NumberOfResults">
-                Example Object here
-              </div>
             <br/>
+            <div style={{fontWeight: "bold"}}>
+                <Link to="/Login" style={{color: "#FA730B"}}> Sign in</Link>{" "}
+                to view your Favorites
             </div>
-            Recipe Objects here
-          </div>
         </div>
     </div>
   );
 };
 
-export default SearchResult;
+export default FavoriteNotLogged;

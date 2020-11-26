@@ -2,7 +2,6 @@ import React from 'react';
 import PageTitle from './PageTitle';
 import 'typeface-roboto';
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
@@ -118,6 +117,7 @@ const handleRegChange = event => {
         </form>
         <br/>
         <br/>
+        {/*Use Advanced Search button currently to switch between SearchResult and FavoriteNotLogged pages*/}
         <Link className="btn btn-success mt-2" id = "searchFilter" to="/SearchResult">
           Advanced Search
         </Link>
