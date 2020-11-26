@@ -115,7 +115,7 @@ body {
 #search {
   height: 30px;
   width: 36%;
-  border-radius: 7px;
+  border-radius: 1px;
   border: white;
   padding: 25px;
   font-size: 25px;
@@ -459,4 +459,85 @@ body {
   border-radius: 15px;
   background-color: orange;
   padding: 10px;
+}
+
+#resultSearch {
+  color: grey;
+  height: 30px;
+  width: 80%;
+  border-radius: 1px;
+  border: white;
+  padding: 25px;
+  font-size: 20px;
+}
+
+#FavPageButton {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+
+#FavImage {
+  background-image: url('./images/heart.png');
+  background-position-x: center;
+  background-size: 100px;
+  height: 65px;
+  background-repeat: no-repeat;
+}
+
+#AccountSettings {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+
+#AccountImage {
+  background-image: url('./images/user.png');
+  background-position-x: center;
+  background-size: 50px;
+  height: 55px;
+  background-repeat: no-repeat;
+}
+
+#List {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+
+#ListImage {
+  background-image: url('./images/list.png');
+  background-position-x: center;
+  background-size: 120px;
+  height: 65px;
+  background-repeat: no-repeat;
+}
+
+#FilterArea {
+  height: 400px;
+  width: 20%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#FilterDropDowns {
+  font-weight: normal;
+}
+
+#Results {
+  background-color: grey;
+  width: 80%;
+  height: 710px;
+}
+
+#FiltersChosen {
+  font-size: 20px;
+}
+
+#NumberOfResults {
+  text-align: left;
+  font-size: 20px;
 }

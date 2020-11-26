@@ -112,13 +112,13 @@ const handleRegChange = event => {
         <PageTitle/>
         <form id="searchParameter">
           <input id="search" type="text" placeholder="Search by recipe, ingredient, dish..." />
-          <span className="searchImage" style={{borderRadius: "15px", width: "4%", backgroundSize: "cover", height: "50px",color: "white", position: "absolute", backgroundColor: "orange", padding: '2px', marginTop: "0.5px" }}>
-            <i className="fa fa-search" style={{paddingTop: "15px"}}></i>
+          <span className="searchImage" style={{borderRadius: "1px", width: "4%", backgroundSize: "cover", height: "50px",color: "white", position: "absolute", backgroundColor: "orange", padding: '2px', marginTop: "0.5px" }}>
+            <i className="fa fa-search" style={{paddingTop: "8px", fontSize: "30px"}}></i>
           </span>
         </form>
         <br/>
         <br/>
-        <Link className="btn btn-success mt-2" id = "searchFilter" to="/FavNotSigned">
+        <Link className="btn btn-success mt-2" id = "searchFilter" to="/SearchResult">
           Advanced Search
         </Link>
       </div>
