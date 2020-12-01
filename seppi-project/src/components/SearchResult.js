@@ -7,6 +7,22 @@ const SearchResult =() => {
 
   const openFavorites = event => {
     {/*Function to produce object inside Results div depending on if the user is logged in or not*/}
+
+    return(
+      <div></div>
+    );
+  }
+
+  const displayResults = event => {
+    document.getElementById("Results").style.display = "block";
+  }
+
+  const hideResults = event => {
+    document.getElementById("Results").style.display = "none";
+  }
+
+  const tempFavButton = event => {
+    window.location.href = '/NotSignedIn';
   }
 
   return(
@@ -25,7 +41,7 @@ const SearchResult =() => {
               </form>
             </div>
             <div style={{width: "25%", height: "100px",paddingTop: "5px", textAlign: "center"}}>
-              <button id="FavPageButton" onClick={() => alert("Hello")}>
+              <button id="FavPageButton" onClick={() => tempFavButton()}>
                 <div id = "FavImage"></div>
                 Favorites
               </button>
@@ -46,21 +62,23 @@ const SearchResult =() => {
             <br/>
             Filter By<br/>
             <div id="FilterDropDowns">
-              Filters go here
+              Filter dropdowns go here
+              <button onClick={() => displayResults()}>Display Search Results</button>
+              <button onClick={() => hideResults()}>Hide Search Results</button>
             </div>
           </div>
           {/*Idea is to have contents in Results hidden and not computed till a Search is made, also hide when Favorite Button Clicked*/}
           <div id="Results">
             <div>
               <div className="row" id="FiltersChosen">
-                <button>Example Object here</button>
+                <button>Filters Chosen here</button>
               </div>
               <div id="NumberOfResults">
-                Example Object here
+                Number of results here
               </div>
             <br/>
             </div>
-            Recipe Objects here
+            Recipes here
           </div>
         </div>
     </div>

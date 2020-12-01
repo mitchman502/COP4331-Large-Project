@@ -68,7 +68,7 @@ const LoginPage = () => {
         localStorage.setItem('user_data', JSON.stringify(user));
 
         setMessage('');
-        window.location.href = '/CardPage';
+        window.location.href = '/SearchResult';
       }
     }
     catch (e) {
@@ -117,7 +117,6 @@ const handleRegChange = event => {
         </form>
         <br/>
         <br/>
-        {/*Use Advanced Search button currently to switch between SearchResult and FavoriteNotLogged pages*/}
         <Link className="btn btn-success mt-2" id = "searchFilter" to="/SearchResult">
           Advanced Search
         </Link>
@@ -278,7 +277,7 @@ const handleRegChange = event => {
               id="PasswordConfirm"
               name="confirmPassword"
               placeholder="Confirm Password"
-              value={regdata.confrirmPassword}
+              value={regdata.confirmPassword}
               onChange={handleRegChange}
               required />
             <div id="passwordInfo" className="mt-2">

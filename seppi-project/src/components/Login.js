@@ -54,7 +54,7 @@ const   [message, setMessage] = React.useState('')
                 localStorage.setItem('user_data', JSON.stringify(user));
 
                 setMessage('');
-                window.location.href = '/CardPage';
+                window.location.href = '/SearchResult';
             }
         }
         catch(e)
