@@ -322,7 +322,7 @@ body {
   background-image: url('./images/edamam.png');
   height: 10vh;
   background-repeat: no-repeat;
-  background-position-x: 1100px;
+  background-position-x: 95%;
   background-position-y: bottom;
 }
 
@@ -531,6 +531,7 @@ body {
   background-color: grey;
   width: 80%;
   height: 710px;
+  display: none;
 }
 
 #FiltersChosen {

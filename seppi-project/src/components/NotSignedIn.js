@@ -2,7 +2,7 @@ import React from 'react';
 import 'typeface-roboto';
 import {Link} from "react-router-dom"
 
-const FavoriteNotLogged =() => {
+const NotSignedIn =() => {
 
   document.body.style.height = "100vh";
 
@@ -58,4 +58,4 @@ const FavoriteNotLogged =() => {
   );
 };
 
-export default FavoriteNotLogged;
+export default NotSignedIn;
