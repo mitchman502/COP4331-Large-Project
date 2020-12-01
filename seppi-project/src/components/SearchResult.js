@@ -1,7 +1,13 @@
 import React from 'react';
 import 'typeface-roboto';
+import Modal from 'react-bootstrap/Modal'
+
 
 const SearchResult =() => {
+
+  const [show, setList] = React.useState(false);
+  const handleCloseList = () => setList(false);
+  const handleShowList = () => setList(true);
 
   document.body.style.height = "100vh";
 
@@ -49,7 +55,7 @@ const SearchResult =() => {
                 <div id = "AccountImage"></div>
                 Account
               </button>
-              <button id="List">
+              <button id="List" onClick={handleShowList}>
                 <div id="ListImage"></div>
                 Lists
               </button>
@@ -81,6 +87,16 @@ const SearchResult =() => {
             Recipes here
           </div>
         </div>
+        <Modal show={show} onHide={handleCloseList}>
+        <Modal.Header closeButton>
+          <Modal.Title>List Overlay</Modal.Title>
+        </Modal.Header>
+        <Modal.Body >
+          <form>
+            
+          </form>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
