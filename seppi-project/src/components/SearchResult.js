@@ -1,6 +1,7 @@
 import React from 'react';
 import 'typeface-roboto';
 import Modal from 'react-bootstrap/Modal'
+import Nav from 'react-bootstrap/Nav'
 
 
 const SearchResult =() => {
@@ -88,8 +89,17 @@ const SearchResult =() => {
           </div>
         </div>
         <Modal show={show} onHide={handleCloseList}>
-        <Modal.Header closeButton>
-          <Modal.Title>List Overlay</Modal.Title>
+        <Modal.Header className="justify-content-center">
+          <Modal.Title>
+            <Nav id ="listHeader">
+              <Nav.Item>
+                <Nav.Link role="tab">Pantry</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link role="tab">Grocery</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body >
           <form>
