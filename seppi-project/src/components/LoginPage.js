@@ -3,10 +3,14 @@ import PageTitle from './PageTitle';
 import 'typeface-roboto';
 import Modal from 'react-bootstrap/Modal'
 import { Link } from 'react-router-dom'
-import Login from './Login'
-import Register from './Register'
+import {AuthContext, UserContext}from '../context'
+import {useContext} from 'react';
 
 const LoginPage = () => {
+
+  // User's login status
+	const [state, setState] = useContext(UserContext);
+
   // Login button handler
   const [show, setShowLogin] = React.useState(false);
   const handleCloseLogin = () => setShowLogin(false);
@@ -43,27 +47,31 @@ const LoginPage = () => {
   };
   const doLogin = async event => {
     event.preventDefault();
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    var obj = {
-      email: data.email.value,
-      password: data.password.value
-    };
+    var obj = {email: data.email,
+                password:data.password
+                };
     var js = JSON.stringify(obj);
-    // alert(js);
+    alert(js);
     try {
-      const response = await fetch(buildPath('api/login'),
-        {
-          method: 'POST',
-          body: js,
-          headers: { 'Content-Type': 'application/json' }
-        });
-
+      const response = await fetch(buildPath('/login'),
+      {
+        method: 'POST',
+        body: js,
+        headers:{Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                }
+                
+      });
+      alert("testing");
       var res = JSON.parse(await response.text());
       alert(res);
       if (res.id <= 0) {
         setMessage('User/Password combination incorrect');
       }
       else {
+        setState(state => ({ ...state, name: res.body.name, email: res.body.email, idToken: res.body.idToken }));
         var user = { firstName: res.firstName, lastName: res.lastName, id: res.id }
         localStorage.setItem('user_data', JSON.stringify(user));
 

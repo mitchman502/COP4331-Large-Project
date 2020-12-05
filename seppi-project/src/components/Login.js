@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom"
+import {AuthContext, UserContext}from '../context'
 
 const Login=() => {
     const app_name = 'seppi'
@@ -18,9 +19,9 @@ const Login=() => {
         email: "",
         password: "",
           };
-  const [data, setData] = React.useState(initialState);
-const   [message, setMessage] = React.useState('')  
-  const handleChange = event => {
+        const [data, setData] = React.useState(initialState);
+        const   [message, setMessage] = React.useState('')  
+    const handleChange = event => {
       setData({
         ...data,
         [event.target.name]: event.target.value
@@ -28,6 +29,7 @@ const   [message, setMessage] = React.useState('')
     };
     const doLogin = async event => {
         event.preventDefault();
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         var obj = {email: data.email.value,
                    password:data.password.value
@@ -39,7 +41,9 @@ const   [message, setMessage] = React.useState('')
             const response = await fetch(buildPath('api/login'),
                 {method:'POST',
                 body:js,
-                headers:{'Content-Type': 'application/json'}
+                headers:{Accept: 'application/json',
+                         'Content-Type': 'application/json'
+                }
             });
 
             var res = JSON.parse(await response.text());
