@@ -182,6 +182,12 @@ const doRegister = async event => {
         <div>
           <div className="Suggestions" style={{ color: 'black' }}>
             Suggested Recipes
+              <div className = "Suggestions1">
+                Test Title
+              </div>
+              <div className = "Suggestions2">
+                Test Description
+              </div>
           </div>
           <div class = "Icons">
                 <div class = "leftIcon">

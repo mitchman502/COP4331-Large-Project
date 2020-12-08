@@ -154,6 +154,7 @@ body {
   background-size: cover;
 }
 
+/* Section Heading */
 .Suggestions {
   height: 80vh;
   padding: 50px;
@@ -161,6 +162,20 @@ body {
   font-size: 40px;
   font-weight: bold;
 }
+
+/* Recipe Title */
+.Suggestions1 {
+  font-size: 20px;
+  color: black;
+}
+
+/* Subtext */
+.Suggestions2 {
+  font-size: 16px;
+  color: grey;
+}
+
+
 
 .Icons {
   display: flex;
